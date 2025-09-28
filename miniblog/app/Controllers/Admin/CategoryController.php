@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Models\CategoryModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\PostModel;
 
 class CategoryController extends ResourceController
 {
@@ -125,8 +126,31 @@ class CategoryController extends ResourceController
      */
     public function delete($id = null)
     {
-        $model = new CategoryModel();
-        $model->delete($id);
-        return redirect()->to('/admin/categories')->with('success', 'Category deleted successfully');
+        $categoryModel = new CategoryModel();
+        $postModel = new PostModel();
+
+        // find all posts that belong to this category
+        $postsToDelete = $postModel->where('category_id', $id)->findAll();
+
+        // if there are posts, loop through them to delete their images
+        if (!empty($postsToDelete)) {
+            foreach ($postsToDelete as $post) {
+                if (!empty($post['image_path'])) {
+                    $imagePath = FCPATH . 'uploads/posts/' . $post['image_path'];
+                    // Delete the image file if it exists
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    }
+                }
+            }
+        }
+
+        // delete all posts associated with the category from the database in one query
+        $postModel->where('category_id', $id)->delete();
+
+        // finally, delete the category itself
+        $categoryModel->delete($id);
+
+        return redirect()->to('/admin/categories')->with('success', 'Category and all its associated posts have been deleted successfully.');
     }
 }

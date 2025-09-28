@@ -58,8 +58,8 @@ class AuthController extends BaseController
         ];
         $session->set($sessionData);
 
-        // redirect to the admin dashboard
-        return redirect()->to('/admin/dashboard');
+        // redirect to the home page
+        return redirect()->to('/');
     }
 
     /**
@@ -69,6 +69,6 @@ class AuthController extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/admin/login')->with('success', 'You have been logged out');
+        return redirect()->to('/')->with('success', 'You have been logged out');
     }
 }

@@ -1,54 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
-    <style>
-        /* Additional styles for the dashboard layout */
-        body {
-            display: block; /* Override the flex centering for this page */
-        }
-        .navbar {
-            background-color: #fff;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .content {
-            padding: 2rem;
-        }
-        .logout-link {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .logout-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
+<?= $this->extend('admin/layout/main') ?>
 
-    <nav class="navbar">
-        <div class="navbar-brand">Dashboard</div>
-        <a href="<?= url_to('admin.logout') ?>" class="logout-link">Cerrar Sesión</a>
-    </nav>
+<?= $this->section('content') ?>
 
-    <main class="content">
-        <h1>Bienvenido al Panel de Administración</h1>
-        <p>Desde aquí podrás gestionar los posts del blog.</p>
+    <h1>Bienvenido al Panel de Administración</h1>
+    <p>Desde aquí podrás gestionar el contenido principal de tu blog.</p>
 
-        <a href="/admin/categories">Manage Categories</a>
-        <a href="/admin/posts">Manage Posts</a>
-    </main>
+    <div class="dashboard-grid">
+        <div class="card">
+            <h2>Gestionar Categorías</h2>
+            <p>Crea, edita y elimina las categorías que organizan tus publicaciones.</p>
+            <a href="/admin/categories" class="btn-primary">Ir a Categorías</a>
+        </div>
 
-</body>
-</html>
+        <div class="card">
+            <h2>Gestionar Posts</h2>
+            <p>Escribe nuevas publicaciones, actualiza las existentes y adminístralas.</p>
+            <a href="/admin/posts" class="btn-primary">Ir a Posts</a>
+        </div>
+
+        </div>
+
+<?= $this->endSection() ?>

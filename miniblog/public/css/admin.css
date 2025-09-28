@@ -1,0 +1,170 @@
+/* Import Google Font from home.php */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* A light slate color like the home page */
+    margin: 0;
+}
+
+/* Gradient definition from home.php */
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Header and Footer styles from home.php */
+.main-header, .main-footer {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 1.5rem;
+}
+.main-footer {
+    border-bottom: none;
+    border-top: 1px solid #e2e8f0;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Main Content Area */
+.content-wrapper {
+    padding: 2.5rem 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.content-wrapper h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+.content-wrapper p {
+    font-size: 1.125rem;
+    color: #475569;
+    margin-bottom: 2.5rem;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card styling from home.php */
+.card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-8px);
+}
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 0;
+}
+.card p {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+/* Button/Link styling from home.php */
+.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+    box-shadow: 0 10px 15px -3px rgba(102, 126, 234, 0.4);
+    transform: scale(1.05);
+}
+
+/* Styled Table for Lists */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between borders */
+}
+.styled-table thead tr {
+    background-color: #f1f5f9; /* slate-100 */
+    color: #475569; /* slate-600 */
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.styled-table th, .styled-table td {
+    padding: 0.75rem 1.5rem;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #e2e8f0; /* slate-200 */
+}
+.styled-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+/* Form Specific Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #475569; /* slate-600 */
+    margin-bottom: 0.5rem;
+}
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1; /* slate-300 */
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Action Buttons in Tables */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.actions a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-danger {
+    background: none;
+    border: none;
+    color: #ef4444; /* red-500 */
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+}
