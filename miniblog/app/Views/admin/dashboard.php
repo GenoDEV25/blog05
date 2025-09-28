@@ -47,6 +47,7 @@
         <p>Desde aquí podrás gestionar los posts del blog.</p>
 
         <a href="/admin/categories">Manage Categories</a>
+        <a href="/admin/posts">Manage Posts</a>
     </main>
 
 </body>

@@ -7,12 +7,12 @@ use CodeIgniter\Model;
 class CategoryModel extends Model
 {
     // The table this model represents
-    protected $table            = 'categories';
+    protected $table = 'categories';
     // The primary key of the table
-    protected $primaryKey       = 'id';
+    protected $primaryKey = 'id';
 
     // The fields that are allowed to be mass-assigned
-    protected $allowedFields    = ['name'];
+    protected $allowedFields = ['name'];
 
     // Enable the automatic use of created_at and updated_at fields
     protected $useTimestamps = true;

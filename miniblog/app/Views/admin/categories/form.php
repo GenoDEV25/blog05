@@ -2,7 +2,10 @@
 <html lang="en">
 <body>
     <main class="content">
-        <h1><?= isset($category) ? 'Edit Category' : 'Create New Category' ?></h1>
+        <div>
+            <h1><?= isset($category) ? 'Edit Category' : 'Create New Category' ?></h1>
+            <h4><a href="/admin/dashboard">Go back to Dashboard</a></h4>
+        </div>
 
         <?php if (session()->has('errors')): ?>
             <div class="alert alert-error">

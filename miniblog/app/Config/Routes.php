@@ -22,4 +22,6 @@ $routes->group('admin', ['filter' => 'auth'], static function ($routes) {
 
     // All standard CRUD routes for categories
     $routes->resource('categories', ['controller' => 'Admin\CategoryController']);
+
+    $routes->resource('posts', ['controller' => 'Admin\PostController']);
 });
